@@ -1,0 +1,11 @@
+{
+  "name": "dummy-responses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Timofey Kuznetsov <tima1702@gmail.com>",
+  "license": "ISC"
+}

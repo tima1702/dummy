@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Iframe</title>
+</head>
+<body>
+<script>
+    const STORAGE_KEY = 'test_key';
+
+    function getValue() {
+        const value = localStorage.getItem(STORAGE_KEY);
+
+        document.querySelector('#current').innerText = value;
+        document.querySelector('#input').value = value;
+    }
+
+    function setValue() {
+        const value = document.querySelector('#input').value;
+        localStorage.setItem(STORAGE_KEY, value);
+
+        getValue();
+    }
+
+    function requestAccess() {
+        document.requestStorageAccess();
+    }
+</script>
+<h1 id="current">
+
+</h1>
+<button onclick="getValue()">Get Value</button>
+<div>
+    <input type="text" id="input" />
+    <button onclick="setValue()">Set value</button>
+</div>
+<button onclick="requestAccess()">Request access</button>
+</body>
+</html>

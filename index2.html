@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+ <script>
+    let i = 0;
+
+    function addIframe() {
+        const div = document.createElement('div');
+        const h2 = document.createElement('h2');
+        h2.innerText = `Iframe #${i++}`;
+        div.appendChild(h2);
+        const iframe = document.createElement('iframe');
+
+        iframe.src = 'http://127.0.0.1:4000/index.html';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads');
+        iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+
+        div.appendChild(iframe);
+        document.body.appendChild(div);
+    }
+    </script>
+    <button onclick="addIframe()">+ iframe</button>
+</body>
+</html>
